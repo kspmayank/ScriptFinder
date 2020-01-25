@@ -361,3 +361,33 @@ button{
     color: #229ab9;
     text-decoration: none;
 }
+
+/*Adding Basic Mobile Resposiveness*/
+@media only screen and (max-width: 600px) {
+  .script-container {
+    flex-direction: column;
+  }
+
+  .script-container > .script-list-section{
+    height: 50vh;
+    width: 100%;
+  }
+
+  .script-list-section .scripts-list {
+        max-height: calc(50vh - 115px);
+    }
+
+    .script-container > .script-details-section {
+        width: calc(100% - 30px);
+        flex-direction: column;
+    }
+
+    .script-details-section .script-details{
+        padding-top: 30px;
+    }
+
+    .script-actions{
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+}
