@@ -3,6 +3,18 @@ body{
     font-family: Verdana,'Open Sans',sans-serif;
 }
 
+/*Common Elements*/
+button{
+    background-color: #3b8dbc;
+    color: #ffffff;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .script-container{
     display: flex;
 }
@@ -33,9 +45,8 @@ body{
         }
 
     .script-list-section .search-container{
-        padding: 15px;
+        padding: 15px 0 15px 15px;
         display: flex;
-        align-items: center;
     }
 
         .script-list-section .search-container .search-box{
@@ -66,7 +77,90 @@ body{
 
         .script-list-section .search-container .filter{
             color: #fff;
-            margin-left: auto; 
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .script-list-section .search-container .filter .icon{
+            cursor: pointer;
+            position: relative;
+        }
+
+        .script-list-section .search-container .filter .icon span{
+            position: absolute;
+            top: -10px;
+            right: -7px;
+            background-color: #dd4a39;
+            padding: 2px;
+            border-radius: 3px;
+            font-family: Verdana;
+            font-weight: 100;
+            font-size: 0.7rem;
+        }
+
+        .script-list-section .search-container .filter.active{
+            background-color: #5a657d;
+        }
+
+        .script-list-section .search-container .filter.active .filter-container{
+            display: block;
+        }
+        
+        .script-list-section .search-container .filter .filter-container{
+            display: none;
+            position: absolute;
+            background-color: #e6ebee;
+            border: 3px solid #5a657d;
+            border-radius: 2px;
+            width: 250px;
+            padding: 0 15px;
+            top: 35px;
+            left: -3px;
+            color: #000;
+            z-index: 1;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-items{
+            background-color: #ffffff;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-items ul{
+            padding: 5px 10px;
+            margin-bottom: 0;
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-items p{
+            margin: 0;
+            padding: 10px;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-items li{
+            display: flex;
+            margin: 5px 0;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-items li span{
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-apply button{
+            width: 100%;
+            justify-content: center;
+        }
+
+        .script-list-section .search-container .filter .filter-container .filter-reset{
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .script-list-section .search-container .filter .filter-container a{
+            color: #1897b7;
+            text-decoration: none;
         }
 
 
@@ -84,15 +178,27 @@ body{
         .script-list-section .scripts-list li{
             padding: 8px 15px;
             color: #ffffff;
+            position: relative;
+            cursor: pointer;
         }
 
-            .script-list-section .scripts-list li > p{
+            .script-list-section .scripts-list li > a{
+                text-decoration: none;
+                color: #fff;
                 font-size: 0.9rem;
                 margin: 0;
             }
 
+        .script-list-section .scripts-list li .icon.fav{
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 6px);
+            font-size: 0.8rem;
+            color: #c57200;
+        }
+
         .script-list-section .scripts-list li.active{
-            background-color: #4d6670;#29394e
+            background-color: #4d6670;
         }
 
         .script-list-section .scripts-list li.active > .labels label{
@@ -131,6 +237,7 @@ body{
 .script-details-section .script-details{
     width: 75%;
     padding: 0 15px;
+    position: relative;
 }
 
     .script-details-section .script-details h1{
@@ -142,6 +249,26 @@ body{
 
     .script-details-section .script-details .metadata-details{
         margin: 15px 0; 
+    }
+
+    .script-details-section .script-details .favourite-script{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    .script-details-section .script-details .favourite-script .icon{
+        color: #ffffff;
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+    .script-details-section .script-details .favourite-script .icon.fav{
+        color: #c57200;
     }
 
     .script-details-section .script-details p{
@@ -206,18 +333,13 @@ body{
 .script-actions{
     position: sticky;
     top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .script-actions button{
-    background-color: #3b8dbc;
-    color: #ffffff;
-    padding: 7px 12px;
-    border: none;
-    border-radius: 3px;
     width: 150px;
     text-align: left;
-    display: flex;
-    align-items: center;
 }
 .script-actions .icon{
     margin-right: 8px;

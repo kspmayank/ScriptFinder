@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="preload" as="script" href="scriptFinder.js">
 
     <title>Scripts Finder</title>
   </head>
@@ -16,67 +17,31 @@
             <div class="search-container">
                 <div class="search-box">
                     <i class="fas fa-search icon"></i>
-                    <input type="text" placeholder="Search" />
+                    <input type="text" id="search-script-input" placeholder="Search" />
                 </div>
-                <div class="filter">
-                    <i class="fas fa-filter"></i>
+                <div id="filter-scripts" class="filter">
+                    <i id="filter-icon" class="fas fa-filter icon">
+                    </i>
+                    <div id="filter-container" class="filter-container">
+                        <p>Filter By Label</p>
+                        <div class="filter-items">
+                            <ul></ul>
+                            <p>Select: <a id="filter-all" href="javascript:void(0)">All</a> | <a id="filter-none" href="javascript:void(0)">None</a></p>
+                        </div>
+                        <p><input type="checkbox" id="favourites-only" /> Show Only My Favorites</p>
+                        <p class="filter-apply"><button>APPLY</button></p>
+                        <p class="filter-reset"><a href="javascript:void(0)">RESET ALL FILTERS</a></p>
+                    </div>
                 </div>
             </div>
             <div class="scripts-list">
-                <ul id="scripts-list">
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li class="active">
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                    <li>
-                        <p>Script 1</p>
-                        <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-                    </li>
-                </ul>
+                <ul id="scripts-list"></ul>
             </div>
         </div>
         <div class="script-details-section">
             <i class="fas fa-file-invoice icon"></i>
             <div class="script-details">
-                <h1>Script to Find recently changed tickets</h1>
-                <div class="labels"><label>Label 1</label><label>Label 1</label><label>Label 1</label></div>
-
-                <div class="metadata-details">
-                    <p>Owner: Ghouse | Last Updated: 02/23/2017</p>
-                    <p>Created By: Shah on 07/31/2017</p>
-                    <p>Source: C:/Users/Deskptop/urna_leo_convallis.py</p>
+                <div id="script-information">
                 </div>
 
                 <hr /> 
@@ -166,5 +131,9 @@
     </div>
     
 	<script type="text/javascript" src="data.js"></script>
+    <script src="scriptFinder.js"></script>
+    <script type="text/javascript">
+        ScriptFinder.init(scripts);
+    </script>
   </body>
 </html>
