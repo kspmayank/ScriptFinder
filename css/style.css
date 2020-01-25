@@ -1,0 +1,241 @@
+body{
+    margin: 0;
+    font-family: Verdana,'Open Sans',sans-serif;
+}
+
+.script-container{
+    display: flex;
+}
+
+.script-container >  .script-list-section{
+    width: 300px;
+    background-color: #393e50;
+    height: 100vh;
+}
+
+    .script-list-section .brand-header{
+        padding: 15px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        background-color: #292c3a;
+    }
+
+        .script-list-section .brand-header > h1{
+            margin: 0;
+            font-size: 1em;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        .script-list-section .brand-header .fa-user-circle{
+            margin-left: auto;
+        }
+
+    .script-list-section .search-container{
+        padding: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+        .script-list-section .search-container .search-box{
+            display: flex;
+            align-items: center;
+            background-color: #939caf;
+            padding: 5px;
+            border-radius: 3px;
+            width: 85%;
+        }
+
+            .script-list-section .search-container .search-box .icon{
+                color: #fff;
+            }
+
+            .script-list-section .search-container .search-box input{
+                background-color: transparent;
+                border: none;
+                width: 100%;
+                padding: 5px;
+                color: #fff;
+                font-size: 0.8rem;
+            }
+
+            .script-list-section .search-container .search-box input:focus{
+                outline: 0;
+            }
+
+        .script-list-section .search-container .filter{
+            color: #fff;
+            margin-left: auto; 
+        }
+
+
+    .script-list-section .scripts-list{
+        max-height: calc(100vh - 111px);
+        overflow: auto;
+    }
+
+        .script-list-section .scripts-list ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .script-list-section .scripts-list li{
+            padding: 8px 15px;
+            color: #ffffff;
+        }
+
+            .script-list-section .scripts-list li > p{
+                font-size: 0.9rem;
+                margin: 0;
+            }
+
+        .script-list-section .scripts-list li.active{
+            background-color: #4d6670;#29394e
+        }
+
+        .script-list-section .scripts-list li.active > .labels label{
+            background-color: #29394e;
+        }
+
+/*Labels*/
+.labels{
+        margin: 0 -3px;
+    }
+
+    .labels > label{
+        color: #ffffff !important;
+        font-size: 0.7rem;
+        font-weight: lighter !important;
+        margin: 0 3px;
+        background-color: #52749d;
+        padding: 0px 3px;
+        border-radius: 3px;
+    }
+
+
+.script-container > .script-details-section{
+    width: calc(100% - 300px);
+    background-color: #e3e7e9;
+    padding: 15px;
+    display: flex;
+    overflow: auto;
+    max-height: calc(100vh - 30px);
+}
+
+.script-details-section .icon{
+    font-size: 1.5em;
+}
+
+.script-details-section .script-details{
+    width: 75%;
+    padding: 0 15px;
+}
+
+    .script-details-section .script-details h1{
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #304054;
+    }
+
+    .script-details-section .script-details .metadata-details{
+        margin: 15px 0; 
+    }
+
+    .script-details-section .script-details p{
+        font-size: 0.9rem;
+        font-weight: lighter;
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .script-details-section .script-details label{
+        font-weight: bold;
+        color: #404040;
+    }
+
+    .script-details-section .script-details .usage{
+        margin: 15px 0 30px 0;
+        display: flex;
+        align-items: center;
+    }
+        .script-details-section .script-details .usage p{
+            font-weight: lighter;
+            margin: 0 0 0 10px;
+        }
+
+    .script-details-section .script-details .invocation{
+        margin: 30px 0;
+        color: #404040;
+    }
+        .script-details-section .script-details .invocation ul{
+            font-weight: lighter;
+            font-size: 0.9rem;
+            padding-left: 20px;
+        }
+
+    .script-details-section .script-details .description{
+        margin: 30px 0;
+    }
+        .script-details-section .script-details .description p{
+            margin-bottom: 10px;
+        }
+
+    .script-details-section .script-details .commands label{
+        margin-bottom: 10px;
+        display: block; 
+    }
+
+    .script-details-section .script-details .commands table{
+        background-color: #ffffff;
+        margin-bottom: 10px;
+
+    }
+    .script-details-section .script-details .commands table td{
+        border: 1px solid #ccc;
+        padding: 5px;
+        font-weight: lighter;
+        font-size: 0.7rem;
+    }
+    .script-details-section .script-details .commands table td:first-of-type{
+        white-space: nowrap;
+    }
+
+.script-actions{
+    position: sticky;
+    top: 0;
+}
+
+.script-actions button{
+    background-color: #3b8dbc;
+    color: #ffffff;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 3px;
+    width: 150px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.script-actions .icon{
+    margin-right: 8px;
+    font-size: 0.8rem; 
+    width: 10px;
+}
+
+.script-actions ul{    
+    margin-top: 30px; 
+    padding: 0 5px;
+    list-style: none;
+    font-size: 0.8rem;
+}
+.script-actions ul li{    
+    margin: 5px 0;
+}
+
+.script-actions ul a{
+    color: #229ab9;
+    text-decoration: none;
+}
