@@ -282,6 +282,9 @@ var ScriptFinder = function(){
 					selectedLabels.push(checkbox.childNodes[0].value)
 			});
 
+			// Notify of filter applied
+			ScriptFinder.notify();
+
 			// Checking for favourites only checkbox
 			Configuration.favouritesOnlyFilter = document.getElementById("favourites-only").checked;
 
@@ -322,6 +325,13 @@ var ScriptFinder = function(){
 		viewScript: function(script){
 			Configuration.selectedScript = script;
 			ScriptDetails();
+		},
+		notify: function(){
+			if (Notification.permission == 'granted') {
+		        navigator.serviceWorker.getRegistration().then(function(reg) {
+		          reg.showNotification('Filter Applied.');
+		        });
+		      }
 		}
 	}
 }();
